@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="uk-section">
+  <div class="uk-container uk-container-small">
+    <h1 class="uk-article-title">{{ page.title | escape }}</h1>
+    {% include author.html %}
+    <hr class="uk-margin-large-bottom">
+    <article class="uk-article uk-article-content cv-online">
+      {% for item in site.data.cv %}
+
+        {% if item.title %}
+            <h2>{{ item.title }}</h2>
+        {% endif %}
+
+        {% if item.content %}
+            {{ item.content | markdownify }}
+        {% endif %}
+
+      {% endfor %}
+      {{ content }}
+    </article>
+  </div>
+</div>

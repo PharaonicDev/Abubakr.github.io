@@ -1,0 +1,17 @@
+<div id="map" class="uk-width-1-1 uk-height-large uk-margin-medium" style=""></div>
+
+<script>
+
+  var map = L.map('map').setView([48.9995, 12.0943], 13);
+
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+  }).addTo(map);
+
+  L.marker([48.9995, 12.0943]).addTo(map)
+      .bindPopup("Office: <a href='{{ site.author.office_link }}' target='_blank'>{{ site.author.office }}</a>, <br>{{ site.author.street }},<br>{{ site.author.city }}")
+      .openPopup();
+
+</script>

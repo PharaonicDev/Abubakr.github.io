@@ -1,0 +1,29 @@
+{% if site.author.image %}
+  <img class="uk-margin-small-top uk-margin-medium-bottom author-avatar" src="{{ site.post_assets | absolute_url }}{{ site.author.image }}" alt="{{ site.author.name }}">
+{% endif %}
+
+{% if site.author.name %}
+  <h3 class="uk-margin-remove-top">{{ site.author.name }}</h3>
+{% endif %}
+
+{% if site.author.bio %}
+  <p class="lh-l uk-margin-bottom">{{ site.author.bio }}</p>
+{% endif %}
+
+{% if site.author.email %}
+  <a class="uk-link-text uk-margin-bottom email uk-display-block" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+{% endif %}
+
+{% if site.author.orcid.url %}
+  <p class="uk-margin uk-margin-bottom">
+    <a class="uk-display-inline-block" href="{{ site.author.orcid.url }}" target="_blank"><img alt="ORCID logo" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" width="16" height="16" hspace="4" /></a> <a class="uk-display-inline-block uk-link-text email" href="{{ site.author.orcid.url }}" target="_blank">{{ site.author.orcid.id }}</a>
+  </p>
+{% endif %}
+
+{% if site.author.researchgate %}
+    <a class="uk-button button-outline-primary uk-width-1-1 uk-margin-small" href="{{ site.author.researchgate }}" target="_blank">Researchgate</a>
+{% endif %}
+
+{% if site.author.cv %}
+    <a class="uk-button button-outline-secondary uk-width-1-1 uk-margin-small" href="{{ site.pdf_assets | absolute_url }}{{ site.author.cv }}" target="_blank">Download CV</a>
+{% endif %}

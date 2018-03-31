@@ -1,0 +1,41 @@
+<div class="uk-margin-large-bottom author">
+  <div data-uk-grid class="uk-grid-large">
+    <div class="uk-width-1-3@s">
+      {% if site.author.image %}
+        <img class="uk-margin-small-top author-avatar" src="{{ site.post_assets | absolute_url }}{{ site.author.image }}" alt="{{ site.author.name }}">
+      {% endif %}
+    </div>
+    <div class="uk-width-expand@s gutter-tsm">
+      {% if site.author.name %}
+        <h2 class="uk-margin-remove-top author-name">{{ site.author.name }}</h2>
+      {% endif %}
+
+      {% if site.author.bio %}
+        <p class="lh-l uk-margin-bottom">{{ site.author.bio }}</p>
+      {% endif %}
+
+      {% if site.author.email %}
+        <p class="uk-margin">Email: <a class="uk-link-text email uk-display-inline-block" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+      {% endif %}
+
+      {% if site.author.orcid.url %}
+        <p class="uk-margin uk-margin-medium-bottom">
+          <a class="uk-display-inline-block" href="{{ site.author.orcid.url }}" target="_blank"><img alt="ORCID logo" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" width="16" height="16" hspace="4" /></a> <a class="uk-display-inline-block uk-link-text" href="{{ site.author.orcid.url }}" target="_blank">{{ site.author.orcid.id }}</a>
+        </p>
+      {% endif %}
+
+      <div data-uk-grid class="uk-child-width-expand@m uk-flex-center uk-flex uk-flex-middle">
+        {% if site.author.researchgate %}
+          <div>
+            <a class="uk-button button-outline-primary uk-button-small uk-width-1-1 author-researchgate" href="{{ site.author.researchgate }}" target="_blank">ResearchGate </a>
+          </div>
+        {% endif %}
+        {% if site.author.cv %}
+          <div>
+            <a class="uk-button button-outline-secondary uk-button-small uk-width-1-1 cv-download" href="{{ site.pdf_assets | absolute_url }}{{ site.author.cv }}" target="_blank">Download CV</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
